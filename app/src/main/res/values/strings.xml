@@ -7,6 +7,7 @@
     <string name="hint_titulo">TITULO NOTA</string>
     <string name="hint_coment">ANOTACIONES</string>
     <string name="btn_save">GUARDAR</string>
+    <string name="titulo_list">LISTA NOTAS</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
