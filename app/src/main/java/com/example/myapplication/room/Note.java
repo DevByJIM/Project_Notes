@@ -31,10 +31,10 @@ public class Note {
 
     public Note(String title,String content)
     {
-        this.title = title;
-        this.content = content;
-        creationDate = Calendar.getInstance().getTime().getTime();
-        updateDate = creationDate;
+        this.setTitle(title);
+        this.setContent(content);
+        setCreationDate(Calendar.getInstance().getTime().getTime());
+        setUpdateDate(getCreationDate());
     }
 
     @NonNull
@@ -44,7 +44,7 @@ public class Note {
 
     public void setTitle(@NonNull String title) {
         this.title = title;
-        updateDate = Calendar.getInstance().getTime().getTime();
+        setUpdateDate(Calendar.getInstance().getTime().getTime());
     }
 
     @NonNull
@@ -54,7 +54,7 @@ public class Note {
 
     public void setContent(@NonNull String content) {
         this.content = content;
-        updateDate = Calendar.getInstance().getTime().getTime();
+        setUpdateDate(Calendar.getInstance().getTime().getTime());
     }
 
     public long getCreationDate() {
@@ -63,5 +63,13 @@ public class Note {
 
     public long getUpdateDate() {
         return updateDate;
+    }
+
+    public void setCreationDate(long creationDate) {
+        this.creationDate = creationDate;
+    }
+
+    public void setUpdateDate(long updateDate) {
+        this.updateDate = updateDate;
     }
 }
