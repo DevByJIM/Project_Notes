@@ -5,10 +5,11 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
 import java.util.Calendar;
 
 @Entity(tableName = NotesContract.TABLE_NAME)
-public class Note {
+public class Note implements Serializable {
 
 
     @NonNull
@@ -33,9 +34,15 @@ public class Note {
     {
         this.setTitle(title);
         this.setContent(content);
-        setCreationDate(Calendar.getInstance().getTime().getTime());
+        setCreationDate(obtenerInstanteActual());
         setUpdateDate(getCreationDate());
     }
+
+    private long obtenerInstanteActual()
+    {
+        return Calendar.getInstance().getTime().getTime();
+    }
+
 
     @NonNull
     public String getTitle() {
@@ -44,7 +51,7 @@ public class Note {
 
     public void setTitle(@NonNull String title) {
         this.title = title;
-        setUpdateDate(Calendar.getInstance().getTime().getTime());
+        setUpdateDate(obtenerInstanteActual());
     }
 
     @NonNull
@@ -54,7 +61,7 @@ public class Note {
 
     public void setContent(@NonNull String content) {
         this.content = content;
-        setUpdateDate(Calendar.getInstance().getTime().getTime());
+        setUpdateDate(obtenerInstanteActual());
     }
 
     public long getCreationDate() {
