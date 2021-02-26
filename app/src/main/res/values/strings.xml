@@ -1,8 +1,12 @@
 <resources>
-    <string name="app_name">My Application</string>
-    <string name="tab_text_1">EDIT/NEW</string>
-    <string name="tab_text_2">LIST</string>
-    <string name="tab_text_3">CONFIG</string>
+    <string name="app_name">PROJECT NOTES ByJST®2021</string>
+    <string name="tab_edit">EDIT/NEW</string>
+    <string name="tab_list">LIST</string>
+    <string name="tab_config">CONFIG</string>
+    <!-- TODO: TEXTOS Y HINT DE LOS COMPONENTES -->
+    <string name="hint_titulo">TITULO NOTA</string>
+    <string name="hint_coment">ANOTACIONES</string>
+    <string name="btn_save">GUARDAR</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
