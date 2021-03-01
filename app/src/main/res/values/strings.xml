@@ -10,4 +10,11 @@
     <string name="titulo_list">LISTA NOTAS</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="titulo_config">CONTROL PANEL</string>
+
+    <string name="colorfuente1">COLOR TITULO: </string>
+    <string name="colorfuente2">COLOR CONTENIDO: </string>
+    <string name="colorfuente3">COLOR PRINCIPAL: </string>
+    <string name="colorfuente4">COLOR SECUNDARIO: </string>
+
 </resources>
