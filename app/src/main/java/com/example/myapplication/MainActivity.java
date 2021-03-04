@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity  {
 
         GradientDrawable gd = new GradientDrawable(
                 GradientDrawable.Orientation.LEFT_RIGHT,
-                new int[] {getResources().getColor(R.color.primary_200),getResources().getColor(R.color.primary_500)});
+                new int[] {getResources().getColor(R.color.primary_200),getResources().getColor(R.color.primary_500),getResources().getColor(R.color.primary_200)});
 
         view.setBackground(gd);
 
