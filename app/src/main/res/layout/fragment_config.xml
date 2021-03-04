@@ -11,28 +11,6 @@
     <!-- TODO: Update blank fragment layout -->
 
     <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:text="@string/colorfuente1"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:text="@string/colorfuente3"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-    <TextView
         android:id="@+id/editTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -50,10 +28,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tv_TitleColour"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:text="@string/colorfuente1"
         android:textStyle="bold"
@@ -61,25 +39,81 @@
         app:layout_constraintTop_toBottomOf="@+id/editTitle" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tv_ContentColour"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="50dp"
         android:text="@string/colorfuente2"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_TitleColour" />
+
+    <TextView
+        android:id="@+id/tv_SecondaryColour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/colorfuente4"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_PrimaryColour" />
+
+    <TextView
+        android:id="@+id/tv_PrimaryColour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/colorfuente3"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_ContentColour" />
 
     <Button
-        android:id="@+id/btnColor1"
+        android:id="@+id/btnTitleColour"
         android:layout_width="148dp"
         android:layout_height="41dp"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="48dp"
-        android:background="@color/secondary_500"
-        app:layout_constraintStart_toEndOf="@+id/textView"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/titleColour"
+        android:onClick="onClic"
+        app:layout_constraintStart_toEndOf="@+id/tv_TitleColour"
         app:layout_constraintTop_toBottomOf="@+id/editTitle" />
+
+    <Button
+        android:id="@+id/btnContentColour"
+        android:layout_width="148dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="@color/textColor"
+        android:onClick="onClic"
+        app:layout_constraintStart_toEndOf="@+id/tv_ContentColour"
+        app:layout_constraintTop_toBottomOf="@+id/btnTitleColour" />
+
+    <Button
+        android:id="@+id/btnPrimaryColour"
+        android:layout_width="148dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="@color/primary_500"
+        android:onClick="onClic"
+        app:layout_constraintStart_toEndOf="@+id/tv_PrimaryColour"
+        app:layout_constraintTop_toBottomOf="@+id/btnContentColour" />
+
+    <Button
+        android:id="@+id/btnSecondaryColour"
+        android:layout_width="148dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="29dp"
+        android:backgroundTint="@color/primary_200"
+        android:onClick="onClic"
+        app:layout_constraintStart_toEndOf="@+id/tv_SecondaryColour"
+        app:layout_constraintTop_toBottomOf="@+id/btnPrimaryColour" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
