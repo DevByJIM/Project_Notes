@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
@@ -11,6 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 
 import com.flask.colorpicker.ColorPickerView;
 import com.flask.colorpicker.OnColorSelectedListener;
@@ -63,20 +66,7 @@ public class ConfigFragment extends Fragment {
 
     private int color;
     public void onClic(View view){
-        switch(view.getId()){
-            case R.id.btnTitleColour:
-                DameColor(color);
-                break;
-            case R.id.btnContentColour:
-                DameColor(color);
-                break;
-            case R.id.btnPrimaryColour:
-                DameColor(color);
-                break;
-            case R.id.btnSecondaryColour:
-                DameColor(color);
-                break;
-        }
+
     }
 
     private void DameColor(int currentColor){
@@ -118,15 +108,7 @@ public class ConfigFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_config, container, false);
-        btnColor1 = view.findViewById(R.id.btnTitleColour);
 
-        color = ((ColorDrawable)btnColor1.getBackground()).getColor();
-        btnColor1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onClic(v);
-            }
-        });
 
         return view;
 

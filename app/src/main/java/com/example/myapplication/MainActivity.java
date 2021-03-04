@@ -17,6 +17,16 @@ import com.example.myapplication.ui.main.SectionsPagerAdapter;
 
 public class MainActivity extends AppCompatActivity  {
 
+    private OverrideResources res;
+
+    @Override public OverrideResources getResources() {
+        if (res == null) {
+            res = new OverrideResources(super.getResources(),getApplicationContext());
+        }
+        return res;
+    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
