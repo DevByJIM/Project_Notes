@@ -184,6 +184,8 @@ public class ConfigFragment extends Fragment {
         edit.commit();
 
         actualizarVisual();
+
+        ((MainActivity)getActivity()).restart();
     }
 
 
