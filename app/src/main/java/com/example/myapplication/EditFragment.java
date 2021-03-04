@@ -1,5 +1,7 @@
 package com.example.myapplication;
 
+import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -80,7 +82,9 @@ public class EditFragment extends Fragment {
         title = (EditText)view.findViewById(R.id.editTitle);
         content = (EditText)view.findViewById(R.id.editContent);
 
-
+        title.setTextColor(getActivity().getResources().getColor(R.color.titleColour));
+        content.setTextColor(getActivity().getResources().getColor(R.color.textColor));
+        content.setBackgroundColor(getActivity().getResources().getColor(R.color.primary_200));
 
         ((Button)view.findViewById(R.id.btnSave)).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,6 +92,19 @@ public class EditFragment extends Fragment {
                 addOrUpdateNote(v);
             }
         });
+
+
+        Button button = ((Button)view.findViewById(R.id.btnSave));
+
+        GradientDrawable gd = new GradientDrawable(
+                GradientDrawable.Orientation.TOP_BOTTOM,
+                new int[] {getResources().getColor(R.color.primary_500),getResources().getColor(R.color.primary_200)});
+
+        gd.setCornerRadius(10);
+
+        gd.setStroke(2, Color.BLACK);
+
+        button.setBackground(gd);
 
         return view;
     }
