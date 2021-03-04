@@ -37,7 +37,7 @@ public class ConfigFragment extends Fragment {
         // Required empty public constructor
     }
 
-   Button btnColor1;
+   Button btnTitle, btnContent, btnPrimary, btnSecondary;
 
     // TODO: Rename and change types and number of parameters
     public static ConfigFragment newInstance(String param1, String param2) {
@@ -56,8 +56,6 @@ public class ConfigFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
-        
     }
 
 
@@ -118,10 +116,31 @@ public class ConfigFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_config, container, false);
-        btnColor1 = view.findViewById(R.id.btnTitleColour);
+        btnTitle = view.findViewById(R.id.btnTitleColour);
+        btnContent = view.findViewById(R.id.btnContentColour);
+        btnPrimary = view.findViewById(R.id.btnPrimaryColour);
+        btnSecondary = view.findViewById(R.id.btnSecondaryColour);
 
-        color = ((ColorDrawable)btnColor1.getBackground()).getColor();
-        btnColor1.setOnClickListener(new View.OnClickListener() {
+        //color = ((ColorDrawable)btnColor1.getBackground()).getColor();
+        btnTitle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onClic(v);
+            }
+        });
+        btnContent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onClic(v);
+            }
+        });
+        btnPrimary.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onClic(v);
+            }
+        });
+        btnSecondary.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onClic(v);

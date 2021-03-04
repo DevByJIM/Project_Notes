@@ -78,7 +78,6 @@
         android:layout_marginStart="68dp"
         android:layout_marginTop="20dp"
         android:backgroundTint="@color/titleColour"
-        android:onClick="onClic"
         app:layout_constraintStart_toEndOf="@+id/tv_TitleColour"
         app:layout_constraintTop_toBottomOf="@+id/editTitle" />
 
@@ -89,7 +88,6 @@
         android:layout_marginStart="36dp"
         android:layout_marginTop="28dp"
         android:backgroundTint="@color/textColor"
-        android:onClick="onClic"
         app:layout_constraintStart_toEndOf="@+id/tv_ContentColour"
         app:layout_constraintTop_toBottomOf="@+id/btnTitleColour" />
 
@@ -100,7 +98,6 @@
         android:layout_marginStart="44dp"
         android:layout_marginTop="28dp"
         android:backgroundTint="@color/primary_500"
-        android:onClick="onClic"
         app:layout_constraintStart_toEndOf="@+id/tv_PrimaryColour"
         app:layout_constraintTop_toBottomOf="@+id/btnContentColour" />
 
@@ -111,7 +108,6 @@
         android:layout_marginStart="28dp"
         android:layout_marginTop="29dp"
         android:backgroundTint="@color/primary_200"
-        android:onClick="onClic"
         app:layout_constraintStart_toEndOf="@+id/tv_SecondaryColour"
         app:layout_constraintTop_toBottomOf="@+id/btnPrimaryColour" />
 
