@@ -1,6 +1,8 @@
 package com.example.myapplication;
 
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
@@ -33,11 +35,12 @@ public class ConfigFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    Button btnTitleColor, btnContentColor, btnPrimaryColor, btnSecondaryColor;
+
     public ConfigFragment() {
         // Required empty public constructor
     }
 
-   Button btnColor1;
 
     // TODO: Rename and change types and number of parameters
     public static ConfigFragment newInstance(String param1, String param2) {
@@ -61,26 +64,24 @@ public class ConfigFragment extends Fragment {
     }
 
 
-    private int color;
     public void onClic(View view){
         switch(view.getId()){
             case R.id.btnTitleColour:
-                DameColor(color);
+                DameColor(getActivity().getResources().getColor(R.color.titleColour),R.color.titleColour);
                 break;
             case R.id.btnContentColour:
-                DameColor(color);
+                DameColor(getActivity().getResources().getColor(R.color.textColor),R.color.textColor);
                 break;
             case R.id.btnPrimaryColour:
-                DameColor(color);
+                DameColor(getActivity().getResources().getColor(R.color.primary_200),R.color.primary_200);
                 break;
             case R.id.btnSecondaryColour:
-                DameColor(color);
+                DameColor(getActivity().getResources().getColor(R.color.primary_500),R.color.primary_500);
                 break;
         }
     }
 
-    private void DameColor(int currentColor){
-        Log.d("PRIMER COLOR", color+"");
+    private void DameColor(int currentColor,int idRecurso){
         ColorPickerDialogBuilder
                 .with(getContext())
                 .setTitle("Choose color")
@@ -96,8 +97,7 @@ public class ConfigFragment extends Fragment {
                 .setPositiveButton("ok", new ColorPickerClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int selectedColor, Integer[] allColors) {
-                        color = selectedColor;
-                        Log.d("CAMBIO COLOR", color+"");
+                        guardarCambio(idRecurso,selectedColor);
                     }
                 })
                 .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
@@ -118,19 +118,72 @@ public class ConfigFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_config, container, false);
-        btnColor1 = view.findViewById(R.id.btnTitleColour);
 
-        color = ((ColorDrawable)btnColor1.getBackground()).getColor();
-        btnColor1.setOnClickListener(new View.OnClickListener() {
+
+        btnTitleColor = ((Button)view.findViewById(R.id.btnTitleColour));
+
+        btnTitleColor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onClic(v);
             }
         });
 
+        btnContentColor = ((Button)view.findViewById(R.id.btnContentColour));
+
+        btnContentColor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onClic(v);
+            }
+        });
+
+        btnPrimaryColor = ((Button)view.findViewById(R.id.btnPrimaryColour));
+
+        btnPrimaryColor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onClic(v);
+            }
+        });
+
+        btnSecondaryColor = ((Button)view.findViewById(R.id.btnSecondaryColour));
+
+        btnSecondaryColor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onClic(v);
+            }
+        });
+
+    actualizarVisual();
+
+
+
         return view;
 
 
+    }
+
+    public void actualizarVisual()
+    {
+        btnTitleColor.setBackgroundColor(getActivity().getResources().getColor(R.color.titleColour));
+        btnContentColor.setBackgroundColor(getActivity().getResources().getColor(R.color.textColor));
+        btnPrimaryColor.setBackgroundColor(getActivity().getResources().getColor(R.color.primary_200));
+        btnSecondaryColor.setBackgroundColor(getActivity().getResources().getColor(R.color.primary_500));
+    }
+
+
+    public void guardarCambio(int idModificar,int valor)
+    {
+        SharedPreferences.Editor edit = getActivity().getSharedPreferences("preferences", Context.MODE_PRIVATE).edit();
+
+        edit.putInt(idModificar+"",valor);
+
+        edit.apply();
+        edit.commit();
+
+        actualizarVisual();
     }
 
 
