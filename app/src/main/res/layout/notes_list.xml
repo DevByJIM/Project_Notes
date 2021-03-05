@@ -11,10 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:layout_margin="4dp"
-<<<<<<<<< Temporary merge branch 1
-
-=========
->>>>>>>>> Temporary merge branch 2
         app:cardCornerRadius="10dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout

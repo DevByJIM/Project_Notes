@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PROJECT NOTES ByJST®2021</string>
+    <string name="app_name">APP NOTES ByJST®2021</string>
     <string name="tab_edit">EDIT/NEW</string>
     <string name="tab_list">LIST</string>
     <string name="tab_config">CONFIG</string>
@@ -19,5 +19,11 @@
     <string name="colorfuente2">COLOR CONTENIDO: </string>
     <string name="colorfuente3">COLOR PRINCIPAL: </string>
     <string name="colorfuente4">COLOR SECUNDARIO: </string>
+
+    <string name="acercade">ACERCA DE NOSOTROS</string>
+    <string name="autores">-AUTORES-</string>
+    <string name="autor1">Saúl Caballero</string>
+    <string name="autor2">José Ignacio Martínez</string>
+    <string name="cerrar">CLOSE</string>
 
 </resources>
