@@ -8,11 +8,9 @@
 
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/card"
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:layout_margin="4dp"
-
         app:cardCornerRadius="10dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -21,16 +19,6 @@
             android:layout_height="match_parent"
             android:background="@color/primary_200">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:background="@color/primary_500"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tvTitle"
@@ -41,7 +29,6 @@
                 android:layout_marginEnd="8dp"
                 android:text="TextView"
                 android:textAlignment="center"
-                android:textColor="@color/titleColour"
                 android:textStyle="bold"
                 android:typeface="serif"
                 app:layout_constraintEnd_toEndOf="@id/constraintLayout"
@@ -58,7 +45,6 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="32dp"
                 android:text="TextView"
-                android:textColor="@color/textColor"
                 app:layout_constraintBottom_toBottomOf="@id/constraintLayout"
                 app:layout_constraintEnd_toEndOf="@id/constraintLayout"
                 app:layout_constraintStart_toStartOf="@id/constraintLayout"
@@ -66,47 +52,23 @@
 
             <TextView
                 android:id="@+id/tvCreateDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:layout_marginBottom="4dp"
+                android:layout_width="179dp"
+                android:layout_height="19dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="8dp"
                 android:text="TextView"
-                android:textColor="@color/textColor"
                 app:layout_constraintBottom_toBottomOf="@id/constraintLayout"
-                app:layout_constraintStart_toEndOf="@+id/textView" />
+                app:layout_constraintStart_toStartOf="@id/constraintLayout" />
 
             <TextView
                 android:id="@+id/tvUpdateDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="184dp"
+                android:layout_height="17dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginBottom="4dp"
+                android:layout_marginBottom="8dp"
                 android:text="TextView"
-                android:textColor="@color/textColor"
                 app:layout_constraintBottom_toBottomOf="@id/constraintLayout"
                 app:layout_constraintEnd_toEndOf="@id/constraintLayout" />
-
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginBottom="4dp"
-                android:text="@string/createdate"
-                android:textColor="@color/textColor"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="4dp"
-                android:layout_marginBottom="4dp"
-                android:text="@string/updatedate"
-                android:textColor="@color/textColor"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/tvUpdateDate" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 

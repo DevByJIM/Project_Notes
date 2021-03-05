@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.room.Note;
@@ -35,7 +36,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ViewHolderNo
     public NotesAdapter.ViewHolderNotes onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.notes_list,parent,false);
 
-        ((CardView)view.findViewById(R.id.card)).setCardBackgroundColor(context.getResources().getColor(R.color.primary_200));
+        ((ConstraintLayout)view.findViewById(R.id.constraintLayout)).setBackgroundColor(context.getResources().getColor(R.color.primary_200));
 
         return new ViewHolderNotes(view);
     }
