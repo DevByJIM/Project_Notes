@@ -2,7 +2,6 @@ package com.example.myapplication.ui.main;
 
 import android.content.Context;
 import android.view.ViewGroup;
-import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -35,7 +34,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
         if(object instanceof ListFragment)
         {
-            ((ListFragment)object).actualizarLista();
+            ((ListFragment)object).updateList();
         }
 
     }
