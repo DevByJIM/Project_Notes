@@ -24,6 +24,9 @@
     <string name="autores">-AUTORES-</string>
     <string name="autor1">Saúl Caballero</string>
     <string name="autor2">José Ignacio Martínez</string>
+    <string name="observaciones">
+        Apliciación creada para el DAM2. Curso de Programación Multimedia y Móviles de 2021 en el IES Tubalcaín de Tarazona. Desarrollada en Android Studio 4.1.1.
+    </string>
     <string name="cerrar">CLOSE</string>
 
 </resources>
