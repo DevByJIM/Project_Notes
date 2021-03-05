@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
@@ -35,7 +36,7 @@ public class ConfigFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    Button btnTitleColor, btnContentColor, btnPrimaryColor, btnSecondaryColor;
+    Button btnTitleColor, btnContentColor, btnPrimaryColor, btnSecondaryColor, btnReset;
 
     public ConfigFragment() {
         // Required empty public constructor
@@ -156,7 +157,16 @@ public class ConfigFragment extends Fragment {
             }
         });
 
-    actualizarVisual();
+        btnReset = ((Button)view.findViewById(R.id.btnResetConfig));
+
+        btnReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                resetearConfiguracion(v);
+            }
+        });
+
+        actualizarVisual();
 
 
 
@@ -173,6 +183,37 @@ public class ConfigFragment extends Fragment {
         btnSecondaryColor.setBackgroundColor(getActivity().getResources().getColor(R.color.primary_500));
     }
 
+
+    public void resetearConfiguracion(View v)
+    {
+
+        final String[] options = {
+                "SI","NO"
+        };
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setTitle("¿Resetear configuraciones?");
+        builder.setItems(options, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                if(which == 0){
+                    getActivity().getSharedPreferences("preferences", Context.MODE_PRIVATE).edit().clear().commit();
+
+                    ((MainActivity)getActivity()).restart();
+                }else
+                {
+
+                }
+            }
+        });
+
+
+
+        builder.show();
+
+
+
+    }
 
     public void guardarCambio(int idModificar,int valor)
     {

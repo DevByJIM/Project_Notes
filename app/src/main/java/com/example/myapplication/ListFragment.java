@@ -34,7 +34,7 @@ public class ListFragment extends Fragment {
     private String mParam2;
 
     private RecyclerView lista;
-    private NotesLab notesLab;
+    public NotesLab notesLab;
 
     public ListFragment() {
         // Required empty public constructor
@@ -66,7 +66,7 @@ public class ListFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
-        notesLab = NotesLab.get(getActivity());
+
 
 
 
@@ -79,13 +79,15 @@ public class ListFragment extends Fragment {
         super.onAttach(context);
     }
 
-    public void actualizarLista()
+    public void updateList()
     {
+        notesLab = NotesLab.get(getActivity());
+
         ArrayList<Note> notes = (ArrayList<Note>) notesLab.obtainAllNotes();
 
 
         lista.setLayoutManager(new LinearLayoutManager(getActivity()));
-        NotesAdapter adaptador = new NotesAdapter(notes, getActivity());
+        NotesAdapter adaptador = new NotesAdapter(notes, getActivity(),this);
 
         lista.setAdapter(adaptador);
     }
@@ -96,7 +98,7 @@ public class ListFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_list, container, false);
         lista = view.findViewById(R.id.notesList);
-        actualizarLista();
+        updateList();
         return view;
     }
 }
